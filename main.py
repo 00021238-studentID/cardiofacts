@@ -125,10 +125,6 @@ async def send(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             return
 
         await _send_one_fact(context.bot, CHANNNEL_ID)
-        if is_today_sent:
-             await update.message.reply_text("Fakt jo'natildi ✅")
-        else:
-             await update.message.reply_text("Fakt jo'natilmadi (tekshiring loglarni/xatolarni).")
 
 async def daily_scheduled_send(bot: Bot) -> None:
     global is_allowed, is_today_sent
