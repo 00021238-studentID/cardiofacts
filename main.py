@@ -87,7 +87,7 @@ async def _send_one_fact(bot: Bot, chat_id: int) -> None:
 
             await bot.send_photo(
                 chat_id=chat_id,
-                photo='picture.png',
+                photo='picture.jpg',
                 caption=f'\\#daily\\_fact\n\n💬 *{escape_markdown(fact, version=2)}*\n\n\\@CardioScope — yuragingizga quloq tuting\\.',
                 parse_mode=constants.ParseMode.MARKDOWN_V2
             )
