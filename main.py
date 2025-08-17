@@ -134,7 +134,7 @@ async def daily_scheduled_send(bot: Bot) -> None:
         await _send_one_fact(bot, CHANNNEL_ID)
     elif not is_allowed:
         logger.info("Daily send skipped: is_allowed is False.")
-        await bot.send_message(chat_id=OWNER_ID, text="Kunlik fakt jo'natish *post qo'yish* o'chirilganligi sababli o'tkazib yuborildi.", parse_mode=constants.ParseMode.MARKDOWN_V2)
+        await bot.send_message(chat_id=OWNER_ID, text=escape_markdown("Kunlik fakt jo'natish *post qo'yish* o'chirilganligi sababli o'tkazib yuborildi.", version=2), parse_mode=constants.ParseMode.MARKDOWN_V2)
     elif is_today_sent:
         logger.info("Daily send skipped: Fact already sent today.")
         await bot.send_message(chat_id=OWNER_ID, text="Kunlik fakt bugun allaqachon jo'natilgan.")
